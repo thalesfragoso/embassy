@@ -2,6 +2,7 @@
 #![feature(generic_associated_types)]
 #![feature(asm)]
 #![feature(type_alias_impl_trait)]
+#![feature(future_poll_fn)]
 
 #[cfg(not(any(
     feature = "52810",
@@ -58,6 +59,7 @@ pub mod interrupt;
 #[cfg(feature = "52840")]
 pub mod qspi;
 pub mod rtc;
+pub mod spim;
 pub mod uarte;
 
 pub use cortex_m_rt::interrupt;
