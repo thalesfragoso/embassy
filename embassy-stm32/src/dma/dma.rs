@@ -1,8 +1,7 @@
-use core::task::Poll;
 use core::future::Future;
+use core::task::Poll;
 
 use atomic_polyfill::{AtomicU8, Ordering};
-use core::future::Future;
 use embassy::interrupt::{Interrupt, InterruptExt};
 use embassy::util::{AtomicWaker, OnDrop};
 use futures::future::poll_fn;
@@ -111,7 +110,7 @@ pub(crate) unsafe fn do_transfer(
             }
         })
         .await;
-    
+
         // TODO handle error
         assert!(res == CH_STATUS_COMPLETED);
         drop(on_drop)
